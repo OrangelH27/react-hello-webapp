@@ -8,7 +8,7 @@ import { Context } from "../store/appContext.js";
 
 export const Home = () => {
 	const {store, actions} = useContext(Context);
-	console.log(store.contacts)
+	
 	return (
 		<div className="text-center mt-5">
 			
@@ -16,9 +16,8 @@ export const Home = () => {
 			Crear
 			</Link>
 			{
-				store.contacts?.map(
-					el=>{console.log(el.name)}
-					
+				store.contacts?.map(el=>
+					<ContactCard key={el.id} contact={el} />
 				)
 			}
 			

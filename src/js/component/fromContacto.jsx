@@ -26,7 +26,7 @@ export const ContactoForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         store.selected ?
-            actions.UpdContact(id, formData)
+            actions.updateContact(id, formData)
             :
             actions.createContact(formData)
     }
@@ -41,21 +41,21 @@ export const ContactoForm = () => {
                 <input name="name" value={formData.name} onChange={handleChange} required className="form-control" type="text" placeholder="name" />
             </div>
             <div className="mb-3">
-            <label>Full name</label>
+            <label>Email</label>
                 <input name='email' value={formData.email} onChange={handleChange} required className="form-control" type="email" placeholder='email' />
             </div>
             <div className="mb-3">
-            <label>Full name</label>
+            <label>Address</label>
                 <input name="address" value={formData.address} onChange={handleChange} required className="form-control" type="text" placeholder='address' />
             </div>
             <div className="mb-3">
-            <label>Full name</label>
+            <label>Phone Number</label>
                 <input name='phone' value={formData.phone} onChange={handleChange} required className="form-control" type="number" placeholder='phone' />
             </div>
-                {store.selected ? <input type="submit" value={'Editar'} /> : <input type="submit" value={'Crear'} />}
+                {store.selected ? <input type="submit" value={'Save'} /> : <input type="submit" value={'Create'} />}
             </form>
             <Link className="btn btn-danger" to={'/'}>
-                Volver a home
+                Go Back Home
             </Link>
         </>
     )
