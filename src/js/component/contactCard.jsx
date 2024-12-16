@@ -31,8 +31,8 @@ export const ContactCard = (props) => {
                     <p>
                         {phone}
                     </p>
-                    <div>
-                        <Link onClick={() => actions.selectContact(props.contact)} to={'/contacto/' + id}>
+                    <div className="pb-1">
+                        <Link className="pe-2" onClick={() => actions.selectContact(props.contact)} to={'/contacto/' + id}>
                             Edit
                         </Link>
                         <button onClick={()=>actions.deleteContact(id)}>
